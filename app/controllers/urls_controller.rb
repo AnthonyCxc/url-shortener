@@ -23,6 +23,11 @@ class UrlsController < ApplicationController
       # ActiveModel::ForbiddenAttributesError means require strong params
   end   
 end
+  def destroy
+    @urls = Url.find_by(params[:id])
+    @urls.destroy
+    redirect_to root_path
+end
 
 private 
 def url_params
