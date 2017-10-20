@@ -1,0 +1,7 @@
+<h3>This is the next page</h3>
+<p><%= @urls.long_url%></p>
+<p><%= @urls.short_url%></p>
+<%= link_to 'main page',root_path %>
+<br>
+<h4>This is a more direct way to link back(in my opinion).</h4>
+<%= link_to 'Back', controller: :urls, action: :index %>

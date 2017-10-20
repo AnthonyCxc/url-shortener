@@ -10,6 +10,9 @@
     <tr>
     <td><a href = <%= url.long_url %> ><%= url.long_url %></a></td>
     <td><a href = <%= url.short_url %> ><%= url.short_url %></a></td>
+    <td><%= link_to 'Show', urls_path(url) %> </td>
+    <!-- urls_path is still the pathway for your routes the only thing that changes,is that is taking an argument now/passing information this way which is normally impossible but because of this framework it can -->
     </tr>   
 <% end %>
 </table>
+
