@@ -7,21 +7,19 @@
 </tr>
 
 <%  @urls.each do |url| %>
-<% p '','','','','','','asdf', urls_path(url) %>
     <tr>
     <td><a href = <%= url.long_url %> ><%= url.long_url %></a></td>
-    <td><a href = <%= url.short_url %> ><%= url.short_url %></a></td>
-    <td><%= link_to 'Show', "/urls" #urls_path(url) %> </td>
+    <td> <%= link_to url.short_url, controller: :urls, action: :short, id: url %></a> </td>
+    <td><%= link_to 'Show', urls_path(url) %> </td>
     <!-- urls_path is still the pathway for your routes the only thing that changes,is that is taking an argument now/passing information this way which is normally impossible but because of this framework it can -->
-    <td><%= link_to 'Delete', "/urls/#{@url.id}" , method: :delete, data: { confirm: 'Are you sure?' } %></td> 
-    <!-- urls_path(url)/url = id -->
+    <td><%= link_to 'Delete', urls_path(url), method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>   
 <% end %>
 </table>
 <br>
 <hr>
 <br>
-<%= link_to "Shorten a Url!", new_urls_path %>
+<%= link_to "Shorten a Url!", new_url_path %>
 <br>
 <p>This ONE BELOWED IS a prefered one.</p>
 <%= link_to 'Shorten a Url!', controller: :urls, action: :new%>

@@ -28,6 +28,10 @@ end
     @urls.destroy
     redirect_to root_path
 end
+  def short
+    @urls = Url.find(params[:id])
+    redirect_to @urls.long_url    
+  end 
 
 private 
 def url_params
