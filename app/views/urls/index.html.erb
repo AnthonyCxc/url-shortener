@@ -1,4 +1,4 @@
-<h1><%= @title %></h1>
+<h1><%= @title if @title %></h1> <!-- the if is to prevent an error from popping up constantly -->
 
 <table>
 <tr>
@@ -15,4 +15,11 @@
     </tr>   
 <% end %>
 </table>
+<br>
+<hr>
+<br>
+<%= link_to "Shorten a Url!", new_urls_path %>
+<br>
+<p>This ONE BELOWED IS a prefered one.</p>
+<%= link_to 'Shorten a Url!', controller: :urls, action: :new%>
 
